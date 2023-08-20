@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  whatsapp: MyString
+  twitter: MyString
+  department: MyString
+  level: MyString
+  image: MyString
+
+two:
+  name: MyString
+  whatsapp: MyString
+  twitter: MyString
+  department: MyString
+  level: MyString
+  image: MyString
