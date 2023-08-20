@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  department: one
+  number: 1
+  school: one
+
+two:
+  department: two
+  number: 1
+  school: two

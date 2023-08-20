@@ -2,16 +2,20 @@
 
 one:
   name: MyString
+  string: MyString
+  email: MyString
   whatsapp: MyString
   twitter: MyString
+  level: 1
+  school: one
   department: MyString
-  level: MyString
-  image: MyString
 
 two:
   name: MyString
+  string: MyString
+  email: MyString
   whatsapp: MyString
   twitter: MyString
+  level: 1
+  school: two
   department: MyString
-  level: MyString
-  image: MyString

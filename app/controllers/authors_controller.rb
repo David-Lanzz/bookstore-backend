@@ -1,28 +1,23 @@
 class AuthorsController < ApplicationController
-  def index
-    @authors = Author.all
-    render json: @authors
+
+  def show
+    @author = Author.find(params[:id])
+    render json: @author
   end
 
   def create
     @author = Author.new(author_params)
+
     if @author.save
+      @school = School.find(params[:school_id])
+      @school.authors << @author
       render json: {message: "Author created successfully"}
     else
-      render json: {error: "something went wrong"}
+      render json: {error: @author.error.full_messages}
     end
-
   end
-
-  def update
-  end
-
-  def delete
-  end
-
-  private
 
   def author_params
-    params.require(:author).permit(:name,:whatsapp,:twitter,:department,:level,:image)
+    params.require(:author).permit(:name,:email,:whatsapp,:twitter,:level,:department,:school_id)
   end
 end
