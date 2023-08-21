@@ -1,5 +1,6 @@
 class Author < ApplicationRecord
   belongs_to :school
+  has_many :books
 
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true

@@ -8,7 +8,7 @@ class DepartmentsController < ApplicationController
       @school.departments << @department
       render json: {message: "Department created successfully"}
     else
-      render json: {error: @department.error.full_messages}
+      render json: {error: @department.errors.full_messages}
     end
   end
 

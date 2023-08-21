@@ -19,7 +19,7 @@ class SchoolsController < ApplicationController
     if @school.save
       render json: {message: "School created successfully"}
     else
-      render json: {message: @school.error.full_messages}
+      render json: {message: @school.errors.full_messages}
     end
   end
 

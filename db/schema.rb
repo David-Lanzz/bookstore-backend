@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_20_171856) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_20_214114) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,6 +25,24 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_20_171856) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["school_id"], name: "index_authors_on_school_id"
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.string "category"
+    t.integer "pages"
+    t.integer "progress"
+    t.string "link"
+    t.bigint "author_id", null: false
+    t.bigint "school_id", null: false
+    t.bigint "department_id", null: false
+    t.bigint "level_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_books_on_author_id"
+    t.index ["department_id"], name: "index_books_on_department_id"
+    t.index ["level_id"], name: "index_books_on_level_id"
+    t.index ["school_id"], name: "index_books_on_school_id"
   end
 
   create_table "departments", force: :cascade do |t|
@@ -52,6 +70,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_20_171856) do
   end
 
   add_foreign_key "authors", "schools"
+  add_foreign_key "books", "authors"
+  add_foreign_key "books", "departments"
+  add_foreign_key "books", "levels"
+  add_foreign_key "books", "schools"
   add_foreign_key "departments", "schools"
   add_foreign_key "levels", "departments"
 end

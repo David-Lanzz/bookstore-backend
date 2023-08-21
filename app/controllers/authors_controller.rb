@@ -13,7 +13,7 @@ class AuthorsController < ApplicationController
       @school.authors << @author
       render json: {message: "Author created successfully"}
     else
-      render json: {error: @author.error.full_messages}
+      render json: {error: @author.errors.full_messages}
     end
   end
 
