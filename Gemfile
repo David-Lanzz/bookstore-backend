@@ -8,7 +8,13 @@ gem "rails", "~> 7.0.7"
 
 gem "pg"
 
+gem "devise"
+
+gem "devise_token_auth"
+
 gem "rack-cors"
+
+gem "omniauth"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"

@@ -1,4 +1,5 @@
 class SchoolsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @schools = School.all.includes(:departments)
     @schools_with_departments = @schools.map do |school|
