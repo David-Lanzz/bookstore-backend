@@ -7,5 +7,11 @@ Rails.application.routes.draw do
   resources :authors, only: [:create, :show]
   resources :books, only: [:create, :index]
 
+  resources :auth do
+    collection do
+      get 'get_token', to: 'application#get_token'
+    end
+  end
+
   # root "authors#index"
 end
