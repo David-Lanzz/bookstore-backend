@@ -1,5 +1,11 @@
 class LevelsController < ApplicationController
 
+  def index
+    @department = Department.find(params[:department_id])
+    @levels = @department.levels
+    render json: {department: @department, levels: @levels}
+  end
+
   def create
     @level = Level.new(level_params)
 

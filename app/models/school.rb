@@ -7,4 +7,5 @@ class School < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :logo, presence: true
   validates :location, presence:true
+  validates :alias, presence: true, uniqueness: true
 end

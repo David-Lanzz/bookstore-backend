@@ -1,5 +1,11 @@
 class DepartmentsController < ApplicationController
 
+  def index
+    @school = School.find(params[:school_id])
+    @departments = @school.departments
+    render json: {school: @school,departments: @departments}
+  end
+
   def create
     @department = Department.new(department_params)
 
@@ -21,6 +27,6 @@ class DepartmentsController < ApplicationController
   private
 
   def department_params
-    params.require(:department).permit(:name, :school_id)
+    params.require(:department).permit(:name, :school_id, :alias)
   end
 end

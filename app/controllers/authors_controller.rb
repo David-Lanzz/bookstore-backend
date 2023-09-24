@@ -1,5 +1,10 @@
 class AuthorsController < ApplicationController
 
+  def index
+    @school = School.find(params[:school_id])
+    @authors = @school.authors
+  end
+
   def show
     @author = Author.find(params[:id])
     render json: @author

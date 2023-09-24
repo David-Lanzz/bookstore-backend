@@ -1,5 +1,11 @@
 class BooksController < ApplicationController
 
+  def index
+    @level = Level.find(params[:level_id])
+    @books = @level.books
+    render json: {level: @level, books: @books}
+  end
+
   def create
     @book = Book.new(book_params)
 

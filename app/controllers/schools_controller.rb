@@ -1,17 +1,8 @@
 class SchoolsController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   def index
-    @schools = School.all.includes(:departments)
-    @schools_with_departments = @schools.map do |school|
-    {
-      id: school.id,
-      name: school.name,
-      location: school.location,
-      logo: school.logo,
-      departments: school.departments.map{|department| {name: department.name}}
-    }
-    end
-    render json: @schools_with_departments
+    @schools = School.all
+    render json: @schools
   end
 
   def create
@@ -34,6 +25,6 @@ class SchoolsController < ApplicationController
   private
 
   def school_params
-    params.require(:school).permit(:name, :location, :logo)
+    params.require(:school).permit(:name, :location, :logo, :alias)
   end
 end
