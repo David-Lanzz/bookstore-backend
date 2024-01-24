@@ -17,4 +17,4 @@ test:
 
 production:
   <<: *default
-  database: bookstoremobilepro
+  url: <%= ENV["DATABASE_URL"] %>
