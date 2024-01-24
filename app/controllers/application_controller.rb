@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-  before_action :authenticate_user_with_token
+ # before_action :authenticate_user_with_token
 
   private
 
