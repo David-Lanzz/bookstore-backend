@@ -8,9 +8,9 @@ Bundler.require(*Rails.groups)
 
 module MyApp
   class Application < Rails::Application
-    config.before_initialize do
-      system("bundle exec rails db:migrate")
-    end
+    # config.before_initialize do
+    #   system("bundle exec rails db:migrate")
+    # end
 
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
