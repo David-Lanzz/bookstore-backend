@@ -8,8 +8,6 @@ Bundler.require(*Rails.groups)
 
 module MyApp
   class Application < Rails::Application
-
-# Run migrations before starting the application
     config.before_initialize do
       system("bundle exec rails db:migrate")
     end
