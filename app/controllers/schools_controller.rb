@@ -1,5 +1,5 @@
 class SchoolsController < ApplicationController
-  before_action :require_authentication
+  # before_action :require_authentication
   
   def index
     @schools = School.all.includes(:departments)
