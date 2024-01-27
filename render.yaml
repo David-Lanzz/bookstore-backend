@@ -1,0 +1,6 @@
+# render.yaml
+
+services:
+  - name: your-app
+    buildCommand: bundle exec rails db:migrate && bundle exec puma -C config/puma.rb
+    # Other configuration options...
