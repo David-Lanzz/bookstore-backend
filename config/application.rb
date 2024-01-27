@@ -16,6 +16,8 @@ module MyApp
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w(assets tasks))
 
+    config.autoloader = :classic
+
    # config/application.rb or config/application.rb
 
    config.middleware.insert_before 0, Rack::Cors do
