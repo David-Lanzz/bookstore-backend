@@ -3,6 +3,10 @@ class User < ApplicationRecord
 
     before_create :generate_authentication_token
 
+    validates :username, presence: true
+    validates :email, presence: true, uniqueness: true
+    validates :password, presence: true
+
     private
 
     def generate_authentication_token
