@@ -8,8 +8,18 @@ class DepartmentsController < ApplicationController
 
   def create
     @department = Department.new(department_params)
-
+    
     if @department.save
+      @firstlevel = Level.create!({number: 100, department_id: @department.id})
+      @secondlevel = Level.create!({number: 100, department_id: @department.id})
+      @thirdlevel = Level.create!({number: 100, department_id: @department.id})
+      @fourthlevel = Level.create!({number: 100, department_id: @department.id})
+
+      @department.levels << @firstlevel
+      @department.levels << @secondlevel
+      @department.levels << @thirdlevel
+      @department.levels << @fourthlevel
+
       @school = School.find(params[:school_id])
       @school.departments << @department
       render json: {message: "Department created successfully", department: @department}
