@@ -73,4 +73,4 @@ If you'd like to contribute to this project, please follow these guidelines:
 
 Indicate the license under which your project is distributed. For example:
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](./LICENSE.md).
