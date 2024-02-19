@@ -53,11 +53,12 @@ List and briefly describe the available API endpoints along with their functiona
 
 | Endpoint                  | Method | Description                |
 |---------------------------|--------|----------------------------|
-| `/api/endpoint`           | GET    | Description of endpoint    |
-| `/api/endpoint/:id`       | GET    | Description of endpoint    |
-| `/api/endpoint`           | POST   | Description of endpoint    |
-| `/api/endpoint/:id`       | PUT    | Description of endpoint    |
-| `/api/endpoint/:id`       | DELETE | Description of endpoint    |
+| `http://localhost:3000/signup`           | POST    | Create User    |
+| `http://localhost:3000/login`           | POST    | Create User    |
+| `http://localhost:3000/schools`           | GET    | See all schools    |
+| `http://localhost:3000/schools`           | POST    | Create a school    | "name", "alias", "logo", "location"
+| `http://localhost:3000/departments`           | POST    | Create a department    | "name", "alias", "logo"
+| `http://localhost:3000/departments`           | GET    | See all departments    |
 
 ## Contributing
 
