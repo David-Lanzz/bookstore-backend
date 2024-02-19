@@ -1,6 +1,4 @@
-# Project Name
-
-Brief description of Bookstore Backend.
+# Bookstore Backend
 
 ## Table of Contents
 
