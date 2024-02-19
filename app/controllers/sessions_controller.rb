@@ -4,6 +4,8 @@ class SessionsController < ApplicationController
        if user && user.authenticate(params[:password])
         session[:user_id] = user.id
         render json: {token: user.token, user: {name: user.username}}, status: :ok
+       elsif user.nil?
+        render json: {error: "User does not exist"},status: :not_found
        else
         render json: {error: "Invalid email or password"}, status: :unauthorized
        end

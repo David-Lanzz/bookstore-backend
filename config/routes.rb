@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :authors, only: [:create, :show]
   resources :books, only: [:index, :create]
   resources :categories, only: [:index, :create]
-  resources :users, only: [:create]
+  resources :users, only: [:create, :confirm_user]
   resources :sessions, only: [:create, :destroy]
 
   root to: "schools#index"
