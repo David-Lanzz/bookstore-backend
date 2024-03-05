@@ -11,9 +11,9 @@ class DepartmentsController < ApplicationController
     
     if @department.save
       @firstlevel = Level.create!({number: 100, department_id: @department.id})
-      @secondlevel = Level.create!({number: 100, department_id: @department.id})
-      @thirdlevel = Level.create!({number: 100, department_id: @department.id})
-      @fourthlevel = Level.create!({number: 100, department_id: @department.id})
+      @secondlevel = Level.create!({number: 200, department_id: @department.id})
+      @thirdlevel = Level.create!({number: 300, department_id: @department.id})
+      @fourthlevel = Level.create!({number: 400, department_id: @department.id})
 
       @department.levels << @firstlevel
       @department.levels << @secondlevel
